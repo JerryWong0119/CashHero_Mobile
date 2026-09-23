@@ -1,0 +1,25 @@
+services:
+  cashhero-web:
+    container_name: CashHero-Mobile
+    image: cashhero-mobile:latest
+    restart: always
+
+    # ports:
+    #   - "80:80"
+    #   - "443:443"
+
+    volumes:
+      - ./web:/data/web
+      - ./docker/conf:/usr/local/openresty/nginx/conf
+      - ./docker/ssl:/etc/openresty/ssl:ro
+
+    environment:
+      TZ: Asia/Shanghai
+
+    networks:
+      JerryWong-Network:
+        ipv4_address: 172.88.0.19
+
+networks:
+  JerryWong-Network:
+    external: true
