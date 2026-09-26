@@ -18,7 +18,7 @@ services:
 
     networks:
       JerryWong-Network:
-        ipv4_address: 172.88.0.19
+        ipv4_address: 172.88.0.104
 
 networks:
   JerryWong-Network:

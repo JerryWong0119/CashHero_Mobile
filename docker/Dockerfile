@@ -27,4 +27,6 @@ RUN apt-get update \
     && echo "Asia/Shanghai" > /etc/timezone \
     && rm -rf /var/lib/apt/lists/*
 
+EXPOSE 80 443
+
 CMD ["openresty", "-g", "daemon off;"]
